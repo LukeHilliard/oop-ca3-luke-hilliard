@@ -25,21 +25,50 @@ public class Question1 {
         System.out.println("The Special Event Car Park\n");
 
         while(specialEvent) {
-            int input;
 
-            System.out.print("Enter your cars registration number: ");
-            input = kb.nextInt();
+            int reg;
 
-           if(driveway.search(input) == -1) { // if the car is not there already
-               driveway.push(input);
-           } else {
-               System.out.println("That's weird this car is already here...\nYou should leave.\n");
-           }
+            System.out.print("Enter your cars registration number(+ to add, - to retrieve): ");
+            reg = kb.nextInt();
 
-            if(input == 0)
+            if(reg == 0)
                 specialEvent = false;
-        }
 
+            if(reg > 0) { // Positive number, PARK car
+                if (driveway.search(reg) == -1) { // If the car is not there already
+                    driveway.push(reg);
+                } else {                           // Refuse entry
+                    System.out.println("That's weird this car is already here...\nYou should leave.\n");
+                }
+            }
+
+            if(reg < 0 && !driveway.isEmpty()) // Negative number, RETRIEVE car
+            {
+                reg = Math.abs(reg); // change reg from negative to positive
+                if(driveway.peek() == reg) {
+                    driveway.pop();
+                } else {
+                    // Move cars that are in the way to the street stack
+                    int indexToRemove = driveway.search(reg) - 1;
+                    for(int i = 0; i < indexToRemove; i++) {
+                        street.push(driveway.pop());
+                    }
+
+                    // remove the owners car from the driveway stack
+                    driveway.pop();
+
+                    // add the cars that were on the street to the driveway stack
+                    int streetCars = street.size();
+                    for(int j = 0; j < streetCars; j++) {
+                        driveway.push(street.pop());
+                    }
+                }
+            }
+            printStack(driveway);
+        }
     }
 
+    public static void printStack(Stack<Integer> stack) {
+        System.out.println(stack.toString());
+    }
 }
