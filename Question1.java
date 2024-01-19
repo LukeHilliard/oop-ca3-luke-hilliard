@@ -38,7 +38,6 @@ public class Question1 {
             }
 
 
-
             if(reg > 0) { // Positive number, PARK car
                 if (driveway.search(reg) == -1) { // If the car is not there already
                     driveway.push(reg);
@@ -47,9 +46,11 @@ public class Question1 {
                 }
             }
 
+
             if(reg < 0 && !driveway.isEmpty()) // Negative number, RETRIEVE car
             {
                 reg = Math.abs(reg); // change reg from negative to positive
+
                 if(driveway.peek() == reg) {
                     System.out.println("You were the last one in. Lucky for us we don't have to move anybody's car to get yours.\n");
                     driveway.pop();
