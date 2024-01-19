@@ -47,7 +47,19 @@ public class Question1 {
             }
 
 
-            if(reg < 0 && !driveway.isEmpty()) // Negative number, RETRIEVE car
+            //checking if the input reg is in the driveway to be retrieved
+            boolean regFound = false;
+            for(Integer element : driveway) {
+                if(element == reg) {
+                    regFound = true;
+                    break;
+                }
+            }
+            if(!regFound) {
+                System.out.println("\nThere is no car currently in the driveway with the registration -> " + Math.abs(reg));
+            }
+
+            if(reg < 0 && !driveway.isEmpty() && regFound) // Negative number, RETRIEVE car
             {
                 reg = Math.abs(reg); // change reg from negative to positive
 
