@@ -37,7 +37,6 @@ public class Question1 {
                 specialEvent = false;
             }
 
-
             if(reg > 0) { // Positive number, PARK car
                 if (driveway.search(reg) == -1) { // If the car is not there already
                     driveway.push(reg);
@@ -46,11 +45,10 @@ public class Question1 {
                 }
             }
 
-
             //checking if the input reg is in the driveway to be retrieved
             boolean regFound = false;
             for(Integer element : driveway) {
-                if(element == reg) {
+                if(element == Math.abs(reg)) {
                     regFound = true;
                     break;
                 }
@@ -61,7 +59,8 @@ public class Question1 {
 
             if(reg < 0 && !driveway.isEmpty() && regFound) // Negative number, RETRIEVE car
             {
-                reg = Math.abs(reg); // change reg from negative to positive
+                // change reg from negative to positive
+                reg = Math.abs(reg);
 
                 if(driveway.peek() == reg) {
                     System.out.println("You were the last one in. Lucky for us we don't have to move anybody's car to get yours.\n");
@@ -69,7 +68,7 @@ public class Question1 {
                 } else {
                     // Move cars that are in the way to the street stack
                     int indexToRemove = driveway.search(reg) - 1;
-                    System.out.println("\n----- Moving cars from DRIVEWAY to STREET to retrieve car: " + Math.abs(reg) + " -----");
+                    System.out.println("\n----- Moving cars from DRIVEWAY to STREET to retrieve car: " + reg + " -----");
                     for(int i = 0; i < indexToRemove; i++) {
                         street.push(driveway.pop());
 
@@ -88,11 +87,9 @@ public class Question1 {
 
                         printDriveway(driveway);
                         printStreet(street);
-
                     }
                 }
             }
-
             System.out.println("\n");
         }
     }
@@ -108,7 +105,6 @@ public class Question1 {
         }
         if(driveway.isEmpty())
             System.out.println("There are no car's here.");
-
     }
 
     public static void printStreet(Stack<Integer> street) {
@@ -120,9 +116,9 @@ public class Question1 {
 
             System.out.print("| Reg: " + carReg + " |");
         }
+        if(street.isEmpty())
+            System.out.println("There are no car's here.");
+
         System.out.println("\n");
     }
-
-
-
 }
