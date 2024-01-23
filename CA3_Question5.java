@@ -14,19 +14,31 @@ public class CA3_Question5
     public static void main(String[] args)
     {
 
-        Queue<String> takeoffQueue = new LinkedList<String>();
-        Queue<String> landingQueue = new LinkedList<String>();
+        Queue<String> takeoffQueue = new LinkedList<>();
+        Queue<String> landingQueue = new LinkedList<>();
 
+        takeoffQueue.add("Flight-001");
+        takeoffQueue.add("Flight-002");
+        takeoffQueue.add("Flight-003");
+        takeoffQueue.add("Flight-004");
+
+        landingQueue.add("Flight-101");
+        landingQueue.add("Flight-102");
+        landingQueue.add("Flight-103");
+        landingQueue.add("Flight-104");
+        landingQueue.add("Flight-105");
+
+
+        boolean lastAddedWasTakeoff = false;
         boolean exit = false;
-        String command = "";
+        String command;
         Scanner kb = new Scanner(System.in);
 
         System.out.println("----- Flight Control Tower -----\n");
 
         do {
-
-            String flightSymbol = "";
-            System.out.print("Command: ");
+            String flightSymbol;
+            System.out.print("\nCommand: ");
             command = handleCommandInput(kb.nextLine()); // take command input and handle any invalid inputs
 
             if(command.equals("quit")) { // exit clause
@@ -37,7 +49,7 @@ public class CA3_Question5
             if(command.equalsIgnoreCase("takeoff")) {
 
                 // input validation for Flight Symbol
-                String temp = "";
+                String temp;
                 System.out.print("Flight Symbol (e.g. '432', '124'): ");
                 temp = kb.nextLine();
                 while(temp.length() != 3) {
@@ -48,13 +60,14 @@ public class CA3_Question5
 
                 //push this flight to the takeoff queue
                 takeoffQueue.add(flightSymbol);
+                lastAddedWasTakeoff = true;
 
 
             }
             if(command.equalsIgnoreCase("land")) {
 
                 // input validation for Flight Symbol
-                String temp = "";
+                String temp;
                 System.out.print("Flight Symbol ");
                 temp = kb.nextLine();
                 while(temp.length() != 3) {
@@ -65,6 +78,7 @@ public class CA3_Question5
 
                 //push this flight to the takeoff queue
                 landingQueue.add(flightSymbol);
+                lastAddedWasTakeoff = false;
             }
 
             if(command.equalsIgnoreCase("next")) {
@@ -78,19 +92,34 @@ public class CA3_Question5
 
                     return
                 */
-                runSimulation(takeoffQueue, landingQueue);
+                runSimulation(takeoffQueue, landingQueue, lastAddedWasTakeoff);
             }
 
         }while(!exit);
     }
 
-    public static void runSimulation(Queue<String> takeoff, Queue<String> landing) {
+    public static void runSimulation(Queue<String> takeoff, Queue<String> landing, boolean lastAddedWasTakeoff) {
 
         displayFlightOrder(takeoff, landing);
-        while(!landing.isEmpty()) {
+        System.out.println("\nSimulating :\n");
 
+        if(lastAddedWasTakeoff) { // if the last plane added was planned to takeoff, let it
+            System.out.println(takeoff.remove() + " is taking off from runway 1");
+
+        } else {// let the other planes land
+            while(!landing.isEmpty()) {
+                System.out.println("Landing " + landing.remove());
+            }
+        }
+
+        while(!landing.isEmpty()) {
             System.out.println("Landing " + landing.remove());
         }
+
+        while(!takeoff.isEmpty()) { //
+            System.out.println(takeoff.remove() + " is taking off from runway 1");
+        }
+
 
 
     }
@@ -118,7 +147,6 @@ public class CA3_Question5
         }
 
     }
-
 
     public static String handleCommandInput(String input) {
         Scanner kb = new Scanner(System.in);
