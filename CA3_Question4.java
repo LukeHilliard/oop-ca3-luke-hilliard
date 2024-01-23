@@ -11,9 +11,34 @@ public class CA3_Question4 {
     /*
         filename: name of the file to test.
      */
-    public static boolean validate(String filename) throws FileNotFoundException
-    {
-        return false;
+    public static boolean validate(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        Scanner in = new Scanner(file);
+
+        Stack<String> tagStack = new Stack<String>();
+
+        while (in.hasNext()) {
+            String currentTag = in.next();
+
+            // if the current tag is not a closing tag
+            if(!currentTag.startsWith("</")) {
+                tagStack.push(currentTag);
+            }
+
+            // if the current tag is a closing tag
+            if(currentTag.startsWith("</")) {
+
+                // if the current closing tag matches the last entry of the stack, pop from the stack
+                if(currentTag.substring(2).equals(tagStack.peek().substring(1))) {
+                    //System.out.println("pop");
+                    tagStack.pop();
+                } else { // if false, tags do not match, return false
+                    return false;
+                }
+            }
+
+        }
+        return true;
     }
 
     /*
@@ -21,8 +46,6 @@ public class CA3_Question4 {
          they are valid.
          tags_valid.txt should return true;
          tags_invalid.txt should output as invalid;
-
-
      */
     public static void main(String[] args) throws FileNotFoundException {
         String[] files = {"tags_valid.txt", "tags_invalid.txt"};
