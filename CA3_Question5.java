@@ -17,16 +17,16 @@ public class CA3_Question5
         Queue<String> takeoffQueue = new LinkedList<>();
         Queue<String> landingQueue = new LinkedList<>();
 
-        takeoffQueue.add("Flight-001");
-        takeoffQueue.add("Flight-002");
-        takeoffQueue.add("Flight-003");
-        takeoffQueue.add("Flight-004");
-
-        landingQueue.add("Flight-101");
-        landingQueue.add("Flight-102");
-        landingQueue.add("Flight-103");
-        landingQueue.add("Flight-104");
-        landingQueue.add("Flight-105");
+//        takeoffQueue.add("Flight-001");
+//        takeoffQueue.add("Flight-002");
+//        takeoffQueue.add("Flight-003");
+//        takeoffQueue.add("Flight-004");
+//
+//        landingQueue.add("Flight-101");
+//        landingQueue.add("Flight-102");
+//        landingQueue.add("Flight-103");
+//        landingQueue.add("Flight-104");
+//        landingQueue.add("Flight-105");
 
 
         boolean lastAddedWasTakeoff = false;
