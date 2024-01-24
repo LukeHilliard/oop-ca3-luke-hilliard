@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8030005-81b7-441b-ad95-9169630189f3" name="Changes" comment="Commented out test flights">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3_Question3.java" beforeDir="false" afterPath="$PROJECT_DIR$/CA3_Question3.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2b6RxS07WLpgzAPzKQlUDZQbxXW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CA3_Question5">
+    <configuration name="CA3_Question2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question2" />
+      <module name="oop-ca3-luke-hilliard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CA3_Question3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question3" />
+      <module name="oop-ca3-luke-hilliard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CA3_Question4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question4" />
+      <module name="oop-ca3-luke-hilliard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CA3_Question5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question5" />
+      <module name="oop-ca3-luke-hilliard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Question2" />
+      <module name="oop-ca3-luke-hilliard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CA3_Question5" />
+        <item itemvalue="Application.CA3_Question3" />
+        <item itemvalue="Application.CA3_Question4" />
+        <item itemvalue="Application.CA3_Question2" />
+        <item itemvalue="Application.Question2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8030005-81b7-441b-ad95-9169630189f3" name="Changes" comment="" />
+      <created>1705533788286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705533788286</updated>
+      <workItem from="1705533789432" duration="59000" />
+      <workItem from="1705673814786" duration="3964000" />
+      <workItem from="1705693883482" duration="7000" />
+      <workItem from="1705779181260" duration="47000" />
+      <workItem from="1705920087514" duration="58000" />
+      <workItem from="1705930055175" duration="4316000" />
+      <workItem from="1705934955170" duration="580000" />
+      <workItem from="1705936570598" duration="19000" />
+      <workItem from="1705936606232" duration="61000" />
+      <workItem from="1705946468169" duration="6596000" />
+      <workItem from="1705957554575" duration="727000" />
+      <workItem from="1705999998992" duration="64000" />
+      <workItem from="1706000078623" duration="248000" />
+      <workItem from="1706000432339" duration="598000" />
+      <workItem from="1706005656969" duration="485000" />
+      <workItem from="1706007831166" duration="45000" />
+      <workItem from="1706029731494" duration="309000" />
+      <workItem from="1706030062213" duration="142000" />
+      <workItem from="1706030230489" duration="11804000" />
+    </task>
+    <task id="LOCAL-00001" summary="Question 2 started.&#10;&#10;10X10 2D array initialized and filled with 0's&#10;&#10;Simple for-loop to display each 'pixel'. Display method to be created">
+      <option name="closed" value="true" />
+      <created>1705691962039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705691962039</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Display method for showing the pixels before the 'flood fill'">
+      <option name="closed" value="true" />
+      <created>1705692346185</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705692346185</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Row and column values taken from user, both inputs validated and used to create a new Pair class 'startingPoint'.">
+      <option name="closed" value="true" />
+      <created>1705692879973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705692879973</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed issue allowing for inputs of registrations not in the driveway.">
+      <option name="closed" value="true" />
+      <created>1705693867748</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705693867748</updated>
+    </task>
+    <task id="LOCAL-00005" summary="I did not see the starter code...">
+      <option name="closed" value="true" />
+      <created>1705930274911</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705930274911</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bug fixed : When a minus number is entered it would not retrieve the car.&#10;&#10;FIX: in the enhanced for-loop Math.abs() had to be applied to the variable 'reg'.">
+      <option name="closed" value="true" />
+      <created>1705931354799</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705931354799</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <option name="closed" value="true" />
+      <created>1705948959656</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705948959656</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Linked a Scanner to the new File class created from the inputted file name.&#10;&#10;Body of while loop added&#10;condition: while the Scanner is still scanning the file">
+      <option name="closed" value="true" />
+      <created>1705950328683</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705950328683</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Main logic for finding identifiers and storing them in the map.&#10;&#10;I am using a List of Integers to store the line numbers. The List will maintain the order values were added and can dynamically change.&#10;&#10;&#10;TODO&#10;Correctly track the line number. Currently, the line counter increase after each iteration of the while-loop.">
+      <option name="closed" value="true" />
+      <created>1705952560713</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705952560713</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Completed attempt, working to expectations with the provided valid/invalid txt files.">
+      <option name="closed" value="true" />
+      <created>1706033640887</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706033640887</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial start of the question.&#10;&#10;Program now takes validated command inputs.">
+      <option name="closed" value="true" />
+      <created>1706036445821</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1706036445821</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Program now accepts and processes inputted commands.&#10;&#10;TAKEOFF/LAND&#10;both commands allow for plans to be added to their respective Queues. Both have validation for the flight symbol to make sure they are all 3 characters long.&#10;&#10;NEXT&#10;calls a method runSimulation - still in progress.&#10;&#10;Method created to display both queues.">
+      <option name="closed" value="true" />
+      <created>1706040423083</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706040423083</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Program now simulates flights. &#10;&#10;If the last flight entered was due to takeoff, it is allowed to takeoff first.&#10; &#10; Then the plans due to land are allowed.&#10; &#10; Finally all other planes take off">
+      <option name="closed" value="true" />
+      <created>1706041776267</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706041776267</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commented out test flights">
+      <option name="closed" value="true" />
+      <created>1706041802483</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1706041802483</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Question 2 started.&#10;&#10;10X10 2D array initialized and filled with 0's&#10;&#10;Simple for-loop to display each 'pixel'. Display method to be created" />
+    <MESSAGE value="Display method for showing the pixels before the 'flood fill'" />
+    <MESSAGE value="Row and column values taken from user, both inputs validated and used to create a new Pair class 'startingPoint'." />
+    <MESSAGE value="Fixed issue allowing for inputs of registrations not in the driveway." />
+    <MESSAGE value="I did not see the starter code..." />
+    <MESSAGE value="Bug fixed : When a minus number is entered it would not retrieve the car.&#10;&#10;FIX: in the enhanced for-loop Math.abs() had to be applied to the variable 'reg'." />
+    <MESSAGE value="." />
+    <MESSAGE value="Linked a Scanner to the new File class created from the inputted file name.&#10;&#10;Body of while loop added&#10;condition: while the Scanner is still scanning the file" />
+    <MESSAGE value="Main logic for finding identifiers and storing them in the map.&#10;&#10;I am using a List of Integers to store the line numbers. The List will maintain the order values were added and can dynamically change.&#10;&#10;&#10;TODO&#10;Correctly track the line number. Currently, the line counter increase after each iteration of the while-loop." />
+    <MESSAGE value="Completed attempt, working to expectations with the provided valid/invalid txt files." />
+    <MESSAGE value="Initial start of the question.&#10;&#10;Program now takes validated command inputs." />
+    <MESSAGE value="Program now accepts and processes inputted commands.&#10;&#10;TAKEOFF/LAND&#10;both commands allow for plans to be added to their respective Queues. Both have validation for the flight symbol to make sure they are all 3 characters long.&#10;&#10;NEXT&#10;calls a method runSimulation - still in progress.&#10;&#10;Method created to display both queues." />
+    <MESSAGE value="Program now simulates flights. &#10;&#10;If the last flight entered was due to takeoff, it is allowed to takeoff first.&#10; &#10; Then the plans due to land are allowed.&#10; &#10; Finally all other planes take off" />
+    <MESSAGE value="Commented out test flights" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented out test flights" />
+  </component>
+</project>

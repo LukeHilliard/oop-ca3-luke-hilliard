@@ -48,9 +48,7 @@ public class CA3_Question3
 
             System.out.println(key + " -> " + lineNumbers.toString());
         }
-
     }
-
     public static void main(String[] args)throws IOException {
         readFile("CA3_Question1.java");
 
