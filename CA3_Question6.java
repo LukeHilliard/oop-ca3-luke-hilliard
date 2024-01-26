@@ -1,4 +1,5 @@
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -53,10 +54,37 @@ public class CA3_Question6
             }
             else if(command.equals("sell"))
             {
-                int qty = in.nextInt();
+                int sellQty = in.nextInt();
                 double price = in.nextDouble();
+                int qty = sellQty;
+                double gain = 0.00;
+                double cost = 0.00;
+                double profit = 0.00;
+                /*
+                 if the last entry to the queue is <= sellingQty          shareQueue.getQuantity
 
+                 profit = price * shareQueue.getQuantity
+                 sellQty -= shareQueue.getQuantity
 
+                 loop until sellQty = 0
+                 */
+                while(!shareQueue.isEmpty() && qty > 0) {
+                   Share shareToBeSold = shareQueue.peek();
+
+                   if(shareToBeSold.getQuantity() <= qty) {
+                       gain += price * shareToBeSold.getQuantity();
+                       qty -= shareToBeSold.getQuantity();
+                       cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
+                       shareQueue.remove();
+                   } else {
+                       gain += price * qty;
+                       shareToBeSold.setQuantity(shareToBeSold.getQuantity() - qty);
+                       cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
+                       qty = 0;
+                   }
+                }
+                profit = gain - cost;
+                System.out.println("Sold " + sellQty + " shares, with a total profit of €" + profit);
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
