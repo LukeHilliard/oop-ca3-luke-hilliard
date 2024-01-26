@@ -1,4 +1,6 @@
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 /**
  *  Name:
@@ -35,6 +37,8 @@ public class CA3_Question6
 
        Scanner in = new Scanner(System.in);
         String command="";
+        Queue<Share> shareQueue = new LinkedList<>();
+
             do {
             System.out.print(">");
             command = in.next();
@@ -42,6 +46,9 @@ public class CA3_Question6
             {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
+
+                // add new buy to the queue
+                shareQueue.add(new Share(qty, price));
 
             }
             else if(command.equals("sell"))
