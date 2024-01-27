@@ -1,6 +1,5 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
+
 /**
  *  Name:
  *  Class Group:
@@ -18,33 +17,37 @@ public class CA3_Question7
      */
     public static void main(String[] args) {
         /*
-            Suppose you buy 100 shares of a stock at $12 per share, then another 100 at $10 per share,
-            and then sell 150 shares at $15. You have to pay taxes on the gain, but exactly what is the
-            gain? In the United States,
-            the FIFO rule holds:
-            1) You first sell all shares of the first batch for a profit of $300,
-            2) then 50 of the shares from the second batch, for a profit of $250,
-            3) yielding a total profit of $550.
-
-            Write a program that can make these calculations for arbitrary
-            purchases and sales of shares in a single company. The user enters commands
-            buy quantity price, and sell quantity (which causes the gain to be displayed), and quit.
-            Hint:
-            Keep a queue of objects of a class Block that contains the quantity and price of a block of
-            shares.
+            Extend Question 6 to a program that can handle shares of multiple companies. The user
+            enters commands buy symbol quantity price and sell symbol quantity. Hint: Keep a
+            Map<String, Queue<Block>> that manages a separate queue for each stock symbol.
          */
 
         Scanner in = new Scanner(System.in);
-        String command;
+        String command ;
         Queue<Share> shareQueue = new LinkedList<>();
+        // Hash map initialized, using Hash Map over a Tree map as the order of the companies does
+        // not matter and I will be able to be able to get the data faster.
+        Map<String, Queue<Share>> companyPortfolios = new HashMap<>();
+
 
         System.out.println("- - - - - Somewhere in Wall St New York, NY, USA - - - - -\n");
         System.out.println("\t\t\t\tCommands: | buy | sell |\n");
         do {
+
+
             System.out.print(">");
             command = in.next();
             if(command.equalsIgnoreCase("buy"))
             {
+
+                System.out.print("Company symbol: ");
+                String compName = in.nextLine();
+
+                // if it's a new company add them to the portfolio with an empty list.
+                if(!companyPortfolios.containsKey(compName)) {
+                    companyPortfolios.put(compName, new LinkedList<>());
+                }
+
                 System.out.print("Stock Quantity: ");
                 while(!in.hasNextInt()) {
                     System.out.println("* * * Bad quantity input, enter an amount to buy * * *");
@@ -61,8 +64,9 @@ public class CA3_Question7
                 }
                 double price = in.nextDouble();
 
-                // add new buy to the queue
-                shareQueue.add(new Share(qty, price));
+                Share newShare = new Share(qty, price);
+                // add new share to specified companies portfolio
+                companyPortfolios.get(compName).add(newShare);
 
             }
             else if(command.equals("sell"))

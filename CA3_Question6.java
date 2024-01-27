@@ -37,7 +37,7 @@ public class CA3_Question6
          */
 
         Scanner in = new Scanner(System.in);
-        String command="";
+        String command;
         Queue<Share> shareQueue = new LinkedList<>();
 
         System.out.println("- - - - - Somewhere in Wall St New York, NY, USA - - - - -\n");
