@@ -1,5 +1,3 @@
-
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -7,7 +5,7 @@ import java.util.Scanner;
  *  Name:
  *  Class Group:
  */
-public class CA3_Question6
+public class CA3_Question7
 {
 
     /*
@@ -37,15 +35,12 @@ public class CA3_Question6
          */
 
         Scanner in = new Scanner(System.in);
-        String command="";
+        String command;
         Queue<Share> shareQueue = new LinkedList<>();
 
         System.out.println("- - - - - Somewhere in Wall St New York, NY, USA - - - - -\n");
         System.out.println("\t\t\t\tCommands: | buy | sell |\n");
         do {
-            int inputErrorCount = 0;
-
-
             System.out.print(">");
             command = in.next();
             if(command.equalsIgnoreCase("buy"))
