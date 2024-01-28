@@ -34,7 +34,7 @@ public class CA3_Question7
         System.out.println("\t\t\t\tCommands: | buy | sell |\n");
         do {
 
-            if(!companyPortfolios.isEmpty()) {
+            if(!companyPortfolios.isEmpty() && companyPortfolios.size() >= 2) {
                 System.out.println("\n");
                 displayAllPortfolios(companyPortfolios);
                 System.out.println("\n");
@@ -75,8 +75,10 @@ public class CA3_Question7
                 }
 
             }
-            else if(command.equals("sell"))
+            else if(command.equals("sell") )
             {
+                displayAllPortfolios(companyPortfolios);
+                System.out.println("Select a portfolio to sell from.\n");
                 String compName;
                 System.out.print("Company symbol: ");
                 compName = in.next();
@@ -103,20 +105,29 @@ public class CA3_Question7
                 int qty = sellQty;
                 double gain = 0.00;
                 double cost = 0.00;
-                while(!portfolioShares.isEmpty() && qty > 0) {
+
+                // loop until either the portfolio is empty or qty is 0
+                while(!portfolioShares.isEmpty() || qty > 0) {
+
+
                     Share shareToBeSold = portfolioShares.peek();
+
+
                     System.out.println(shareToBeSold.getQuantity() + " " + shareToBeSold.getPrice());
                     if(shareToBeSold.getQuantity() <= qty) {
-
                         gain += price * shareToBeSold.getQuantity();
                         qty -= shareToBeSold.getQuantity();
                         cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
-                        shareQueue.remove();
+
                     } else {
                         gain += price * qty;
                         shareToBeSold.setQuantity(shareToBeSold.getQuantity() - qty);
                         cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
                         qty = 0;
+                    }
+
+                    if(shareToBeSold.getQuantity() == 0) {
+                        shareQueue.remove(); // remove share from queue
                     }
                 }
                 double profit = gain - cost;
@@ -129,14 +140,26 @@ public class CA3_Question7
     }
 
     public static void displayAllPortfolios(Map<String, Queue<Share>> companyPortfolios) {
+        for(Map.Entry<String, Queue<Share>> share : companyPortfolios.entrySet()) {
+            Queue<Share> shares = share.getValue();
+            String companySymbol = share.getKey();
 
-        System.out.println("| Company Symbol | Quantity | Price  |");
+            System.out.println("  "+ companySymbol + "'s Portfolio");
+            System.out.println("| Quantity | Price  |");
+
+            Iterator<Share> shareIter = shares.iterator();
+            while(shareIter.hasNext()) {
+                Share s = shareIter.next();
+                int quantity = s.getQuantity();
+                double price = s.getPrice();
+
+                System.out.print("|   " + quantity + "    |   " + price + " |\n");
+            }
+
+            System.out.println("\n");
+        }
 
     }
 
-    public static void displayIndividualPortfolio(Map<String, Queue<Share>> companyPortfolios, String key) {
-        System.out.println("| " + key + "  | Quantity | Price  |");
-
-    }
 
 }

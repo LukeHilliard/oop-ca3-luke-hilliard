@@ -107,12 +107,16 @@ public class CA3_Question6
                            gain += price * shareToBeSold.getQuantity();
                            qty -= shareToBeSold.getQuantity();
                            cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
-                           shareQueue.remove();
+
                        } else {
                            gain += price * qty;
                            shareToBeSold.setQuantity(shareToBeSold.getQuantity() - qty);
                            cost += shareToBeSold.getQuantity() * shareToBeSold.getPrice();
                            qty = 0;
+                       }
+
+                       if(shareToBeSold.getQuantity() == 0) {
+                           shareQueue.remove();  // remove share from queue
                        }
                     }
                     double profit = gain - cost;
