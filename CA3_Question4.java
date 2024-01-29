@@ -36,7 +36,6 @@ public class CA3_Question4 {
                     return false;
                 }
             }
-
         }
         return true;
     }
