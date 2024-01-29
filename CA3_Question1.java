@@ -4,17 +4,19 @@ import java.util.Stack;
 
 public class CA3_Question1 {
 
-    /**
-     * A homeowner rents out parking spaces in a driveway during special events. The driveway is
-     * a “last-in, first-out” LIFO stack. Of course, when a car owner retrieves a vehicle that was not
-     * the last one in, the cars blocking it must temporarily move to the street so that the
-     * requested vehicle can leave. Write a program that models this behaviour, using one stack for
-     * the driveway and one stack for the street. Use integer values as license plate numbers (e.g.
-     * 1,2,3,4…). Positive numbers add a car (1,2,3…), negative numbers remove a car(-2,-1,…), zero
-     * stops the simulation. Print out the stack after each operation is complete.
-     * So, entering “1” means – add car number 1 to the driveway, entering “
-     * -2” means - retrieve
-     * car number 2 from the driveway.
+    /*
+     * A homeowner rents out parking spaces in a driveway during special events.
+     * The driveway isa “last-in, first-out” LIFO stack. Of course when a car owner retrieves a vehicle that was not the last one in, the cars blocking it must temporarily move to the street so that the
+     * requested vehicle can leave.
+     *
+     * Write a program that models this behaviour, using one stack for
+     * the driveway and one stack for the street.
+     * Use integer values as license plate numbers (e.g. 1,2,3,4…).
+     * Positive numbers add a car (1,2,3…),
+     * negative numbers remove a car(-2,-1,…),
+     * zero stops the simulation.
+     *
+     * Print out the stack after each operation is complete. So, entering “1” means – add car number 1 to the driveway, entering “-2” means - retrieve car number 2 from the driveway.
      */
 
     public static void main(String[] args) {
@@ -25,27 +27,30 @@ public class CA3_Question1 {
         boolean specialEvent = true;
         System.out.println("The Special Event Car Park\n");
 
+
         while(specialEvent) {
 
             int reg;
-            printDriveway(driveway);
-            System.out.print("\nEnter your cars registration number(+ to add, - to retrieve): ");
+            printDriveway(driveway); // display the current state of the driveway
+            System.out.print("Enter your cars registration number(+ to add, - to retrieve): ");
             reg = kb.nextInt();
 
+            // exit program
             if(reg == 0) {
                 System.out.println("\nThe special event has ended.");
                 specialEvent = false;
             }
 
-            if(reg > 0) { // Positive number, PARK car
+           // positive number, PARK car
+            if(reg > 0) {
                 if (driveway.search(reg) == -1) { // If the car is not there already
                     driveway.push(reg);
                 } else {                           // Refuse entry
-                    System.out.println("That's weird this car is already here...\nYou should leave.\n");
+                    System.out.println("That's weird this car is already here...\nYou should leave.");
                 }
             }
 
-            //checking if the input reg is in the driveway to be retrieved
+            // checking if the input reg is in the driveway to be retrieved
             boolean regFound = false;
             for(Integer element : driveway) {
                 if(element == Math.abs(reg)) {
@@ -54,7 +59,7 @@ public class CA3_Question1 {
                 }
             }
             if(!regFound) {
-                System.out.println("\nThere is no car currently in the driveway with the registration -> " + Math.abs(reg));
+                System.out.println("\n- - --*| There is no car currently in the driveway with the registration --> " + Math.abs(reg));
             }
 
             if(reg < 0 && !driveway.isEmpty() && regFound) // Negative number, RETRIEVE car
@@ -63,12 +68,12 @@ public class CA3_Question1 {
                 reg = Math.abs(reg);
 
                 if(driveway.peek() == reg) {
-                    System.out.println("You were the last one in. Lucky for us we don't have to move anybody's car to get yours.\n");
+                    System.out.println("You were the last one in. Lucky for us we don't have to move anybody's car to get yours.");
                     driveway.pop();
                 } else {
                     // Move cars that are in the way to the street stack
                     int indexToRemove = driveway.search(reg) - 1;
-                    System.out.println("\n----- Moving cars from DRIVEWAY to STREET to retrieve car: " + reg + " -----");
+                    System.out.println("\n- - - - --*| Moving cars from DRIVEWAY to STREET to retrieve car: " + reg + " |*-- - - - -");
                     for(int i = 0; i < indexToRemove; i++) {
                         street.push(driveway.pop());
 
@@ -76,10 +81,10 @@ public class CA3_Question1 {
                         printStreet(street);
                     }
 
-                    // remove the owners car from the driveway stack
-                    driveway.pop();
+                    System.out.println("\t\t* * *| Car:" + driveway.peek() + " can now leave |* * *");
+                    driveway.pop(); // remove the owners car from the driveway stack
 
-                    System.out.println("\n----- Moving cars from STREET to DRIVEWAY -----");
+                    System.out.println("\n- - - - --*| Moving cars from STREET to DRIVEWAY |*-- - - - -");
                     // add the cars that were on the street to the driveway stack
                     int streetCars = street.size();
                     for(int j = 0; j < streetCars; j++) {
@@ -97,20 +102,20 @@ public class CA3_Question1 {
     public static void printDriveway(Stack<Integer> driveway) {
         Iterator<Integer> drivewayIter = driveway.iterator();
 
-        System.out.println("--- Driveway ---");
+        System.out.print("DRIVEWAY --* ");
         while(drivewayIter.hasNext()) {
             int carReg = drivewayIter.next();
-
             System.out.print("| Reg: " + carReg + " |");
         }
         if(driveway.isEmpty())
             System.out.println("There are no car's here.");
+        System.out.println();
     }
 
     public static void printStreet(Stack<Integer> street) {
         Iterator<Integer> streetIter = street.iterator();
 
-        System.out.println("\n--- Street ---");
+        System.out.print("STREET   --* ");
         while(streetIter.hasNext()) {
             int carReg = streetIter.next();
 
@@ -118,7 +123,6 @@ public class CA3_Question1 {
         }
         if(street.isEmpty())
             System.out.println("There are no car's here.");
-
         System.out.println("\n");
     }
 }
