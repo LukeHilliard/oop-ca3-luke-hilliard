@@ -30,18 +30,25 @@ public class CA3_Question1 {
 
         while(specialEvent) {
 
-            int reg;
             printDriveway(driveway); // display the current state of the driveway
+
+            int reg;
             System.out.print("Enter your cars registration number(+ to add, - to retrieve): ");
+            while(!kb.hasNextInt()) {
+                System.out.println("--* A number plate consists of positive whole numbers *--");
+                System.out.print("Enter your cars registration number: ");
+                kb.next();
+            }
             reg = kb.nextInt();
 
             // exit program
             if(reg == 0) {
-                System.out.println("\nThe special event has ended.");
+                System.out.println("\n--* The special event has ended. *--");
                 specialEvent = false;
+
             }
 
-           // positive number, PARK car
+            // positive number, PARK car
             if(reg > 0) {
                 if (driveway.search(reg) == -1) { // If the car is not there already
                     driveway.push(reg);
@@ -58,7 +65,7 @@ public class CA3_Question1 {
                     break;
                 }
             }
-            if(!regFound) {
+            if(!regFound && specialEvent) { // checking if specialEvent is true so this wont display when 0 is entered
                 System.out.println("\n- - --*| There is no car currently in the driveway with the registration --> " + Math.abs(reg));
             }
 
@@ -81,7 +88,7 @@ public class CA3_Question1 {
                         printStreet(street);
                     }
 
-                    System.out.println("\t\t* * *| Car:" + driveway.peek() + " can now leave |* * *");
+                    System.out.println("\t\t* * *| Car: " + driveway.peek() + " can now leave |* * *");
                     driveway.pop(); // remove the owners car from the driveway stack
 
                     System.out.println("\n- - - - --*| Moving cars from STREET to DRIVEWAY |*-- - - - -");
