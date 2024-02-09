@@ -31,14 +31,8 @@ public class CA3_Question7
 
 
         System.out.println("- - - - - Somewhere in Wall St New York, NY, USA - - - - -\n");
-        System.out.println("\t\t\t\tCommands: | buy | sell |\n");
+        System.out.println("\t\t\t\tCommands: | buy | sell | display |\n");
         do {
-
-            if(!companyPortfolios.isEmpty() && companyPortfolios.size() >= 2) {
-                System.out.println("\n");
-                displayAllPortfolios(companyPortfolios);
-                System.out.println("\n");
-            }
 
             System.out.print(">");
             command = in.next();
@@ -78,10 +72,29 @@ public class CA3_Question7
             else if(command.equals("sell") )
             {
                 displayAllPortfolios(companyPortfolios);
-                System.out.println("Select a portfolio to sell from.\n");
                 String compName;
-                System.out.print("Company symbol: ");
-                compName = in.next();
+
+
+                // validate the company name input to make sure the company is in the current
+                // instance of companyPortfolios
+                boolean isValidCompany = false; // Flag to check if the input company is valid
+                do{
+                    System.out.print("Select a portfolio to sell from using their name: ");
+                    compName = in.next();
+                    for(String company : companyPortfolios.keySet()) {
+                        if(company.equals(compName)) {
+                            isValidCompany = true;
+                            break;
+                        }
+                    }
+
+                    if(!isValidCompany) {
+                        System.out.println("* * * Invalid company name, please enter a valid company name * * *");
+                    }
+                }while(!isValidCompany);
+
+
+
 
                 System.out.print("Stock Quantity: ");
                 while(!in.hasNextInt()) {
@@ -113,6 +126,7 @@ public class CA3_Question7
                     Share shareToBeSold = portfolioShares.peek();
 
 
+
                     System.out.println(shareToBeSold.getQuantity() + " " + shareToBeSold.getPrice());
                     if(shareToBeSold.getQuantity() <= qty) {
                         gain += price * shareToBeSold.getQuantity();
@@ -133,17 +147,25 @@ public class CA3_Question7
                 double profit = gain - cost;
                 System.out.println("Sold " + sellQty + " shares, with a total profit of €" + profit);
 
-            } else {
+            }
+            else if(command.equals("display"))
+            {
+                displayAllPortfolios(companyPortfolios);
+            }
+            else
+            {
                 System.out.println("* * * Bad command input * * *");
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
 
     public static void displayAllPortfolios(Map<String, Queue<Share>> companyPortfolios) {
+        int portfCount = 1;
         for(Map.Entry<String, Queue<Share>> share : companyPortfolios.entrySet()) {
             Queue<Share> shares = share.getValue();
             String companySymbol = share.getKey();
 
+            System.out.println("#"+portfCount);
             System.out.println("  "+ companySymbol + "'s Portfolio");
             System.out.println("| Quantity | Price  |");
 
@@ -157,7 +179,14 @@ public class CA3_Question7
             }
 
             System.out.println("\n");
+            portfCount++;
         }
+
+    }
+
+
+    public static void displayBuyMessage(String company, int qty, double price) {
+
 
     }
 
