@@ -43,7 +43,6 @@ public class CA3_Question6
         System.out.println("- - - - - Somewhere in Wall St New York, NY, USA - - - - -\n");
         System.out.println("\t\t\t\tCommands: | buy | sell |\n");
             do {
-                int inputErrorCount = 0;
 
 
                 System.out.print(">");
